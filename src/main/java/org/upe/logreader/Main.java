@@ -1,17 +1,34 @@
-package org.upe.logreader;
+//Grupo: Camila Jullyane, João Victor Salgado, Keisy Lizandra
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+package org.upe.logreader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Locale;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        String acess = "../UPE-log-reader/access.log";
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        Locale.setDefault(Locale.US);
+        Scanner sc = new Scanner(System.in);
+        int option;
+
+        try (Scanner scanner = new Scanner(new File(acess))) {
+            while (scanner.hasNextLine()) {
+                String linha = scanner.nextLine();
+                System.out.println(linha);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("1 - Recursos grandes respondidos\n2 - Não respondidos\n3 - % de requisições por SO\n4 - Média das requisições POST\n0 - Sair");
+        option = sc.nextInt();
+
+        switch (option) {
+            case 0:
+                System.out.println("case 0");
         }
     }
 }
