@@ -12,15 +12,6 @@ public class Main {
         ArrayList data = LogData.logReader();
         int option;
 
-        try (Scanner scanner = new Scanner(new File(acess))) {
-            while (scanner.hasNextLine()) {
-                String linha = scanner.nextLine();
-                System.out.println(linha);
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
         System.out.println("1 - Recursos grandes respondidos\n2 - Não respondidos\n3 - % de requisições por SO\n4 - Média das requisições POST\n0 - Sair");
         option = sc.nextInt();
 
