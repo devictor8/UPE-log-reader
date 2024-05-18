@@ -1,17 +1,15 @@
 //Grupo: Camila Jullyane, João Victor Salgado, Keisy Lizandra
 
 package org.upe.logreader;
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String acess = "../UPE-log-reader/access.log";
 
-        Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
+        ArrayList data = LogData.logReader();
         int option;
 
         try (Scanner scanner = new Scanner(new File(acess))) {

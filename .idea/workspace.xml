@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19f156af-675f-46ab-9eb9-a307b1bd2a54" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="3421e4f5-c005-4453-993b-cb1531eac421" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/upe/logreader/LogData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/upe/logreader/LogData.java" afterDir="false" />
+    </list>
+    <list id="702db6f6-97dc-41e4-8766-efeb9f84d188" name="Changes by joaos" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/upe/logreader/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/upe/logreader/Main.java" afterDir="false" />
+    </list>
+    <list id="00dd6412-131e-4ef9-8972-39a0a8d85a58" name="Changes by Keisy" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/upe/logreader/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/upe/logreader/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -13,79 +20,29 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/org/upe/logreader/Main.java">
+      <ranges>
+        <range start1="3" end1="5" start2="3" end2="4" changelist="702db6f6-97dc-41e4-8766-efeb9f84d188" />
+        <range start1="10" end1="11" start2="9" end2="9" changelist="702db6f6-97dc-41e4-8766-efeb9f84d188" />
+        <range start1="12" end1="13" start2="10" end2="10" changelist="702db6f6-97dc-41e4-8766-efeb9f84d188" />
+        <range start1="14" end1="14" start2="11" end2="12" changelist="702db6f6-97dc-41e4-8766-efeb9f84d188" />
+        <range start1="16" end1="25" start2="14" end2="14" changelist="00dd6412-131e-4ef9-8972-39a0a8d85a58" />
+      </ranges>
+    </file>
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "keisylizandra"
-  }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/devictor8/UPE-log-reader.git",
-    "accountId": "df3e68bd-4450-47bf-8a82-8a6d16aa4bc5"
-  }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
-  <component name="ProjectId" id="2gc1Rptphz8O04WZ4129XmrH7FE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Keisy/UPE-log-reader",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/joaos/IdeaProjects/logReader/src/main/java/org/upe/logreader/Main.java",
-    "vue.rearranger.settings.migration": "true"
+    "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
-      </set>
-    </attachedChunks>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="19f156af-675f-46ab-9eb9-a307b1bd2a54" name="Changes" comment="" />
-      <created>1715982058862</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1715982058862</updated>
-      <workItem from="1715982060032" duration="46000" />
-      <workItem from="1715983126084" duration="336000" />
-    </task>
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/upe/logreader/Main.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>
