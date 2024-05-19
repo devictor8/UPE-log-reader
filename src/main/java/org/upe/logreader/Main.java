@@ -2,7 +2,6 @@
 
 package org.upe.logreader;
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -19,5 +18,6 @@ public class Main {
             case 0:
                 System.out.println("case 0");
         }
+        sc.close();
     }
 }

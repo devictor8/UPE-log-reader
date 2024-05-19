@@ -25,8 +25,8 @@ public class LogData {
             String line = reader.readLine();
 
             while (line != null) {
-                line = reader.readLine();
                 readLine = new LogData();
+
                 Matcher matcher = pattern.matcher(line);
 
                 if (matcher.find()) {
@@ -38,19 +38,9 @@ public class LogData {
                     readLine.status = matcher.group(5);
                     readLine.objectSize = matcher.group(6);
                     readLine.OS = matcher.group(8);
-
-//                    System.out.println(readLine.IP);
-//                    System.out.println(readLine.date);
-//                    System.out.println(readLine.type);
-//                    System.out.println(readLine.URL);
-//                    System.out.println(readLine.status);
-//                    System.out.println(readLine.objectSize);
-//                    System.out.println(readLine.OS);
-
                     arrayData.add(readLine);
-
-
                 }
+                line = reader.readLine();
             }
 
             reader.close();
