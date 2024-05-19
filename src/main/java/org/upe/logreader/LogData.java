@@ -49,4 +49,38 @@ public class LogData {
         }
         return arrayData;
     }
+
+    public String getIP() {
+        return IP;
+    }
+
+    public String getDate() {
+        Pattern datePattern = Pattern.compile("(\\d{2})/([A-Za-z]{3})/(\\d{4}):(\\d{2}):(\\d{2}):(\\d{2}) (\\+\\d{4})");
+        Matcher matcherDate = datePattern.matcher(this.date);
+        if (matcherDate.find()) {
+            return matcherDate.group(2) + "/" + matcherDate.group(3);
+        } else {
+            return "padrão não encontrado";
+        }
+    }
+
+    public String getOS() {
+        return OS;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getURL() {
+        return URL;
+    }
+
+    public String getObjectSize() {
+        return objectSize;
+    }
 }
