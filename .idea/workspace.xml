@@ -4,41 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3421e4f5-c005-4453-993b-cb1531eac421" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="3421e4f5-c005-4453-993b-cb1531eac421" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/upe/logreader/LogData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/upe/logreader/LogData.java" afterDir="false" />
-    </list>
-    <list id="702db6f6-97dc-41e4-8766-efeb9f84d188" name="Changes by joaos" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/upe/logreader/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/upe/logreader/Main.java" afterDir="false" />
     </list>
-    <list id="00dd6412-131e-4ef9-8972-39a0a8d85a58" name="Changes by Keisy" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/upe/logreader/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/upe/logreader/Main.java" afterDir="false" />
-    </list>
+    <list id="702db6f6-97dc-41e4-8766-efeb9f84d188" name="Changes by joaos" comment="" />
+    <list id="00dd6412-131e-4ef9-8972-39a0a8d85a58" name="Changes by Keisy" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/org/upe/logreader/Main.java">
-      <ranges>
-        <range start1="3" end1="5" start2="3" end2="4" changelist="702db6f6-97dc-41e4-8766-efeb9f84d188" />
-        <range start1="10" end1="11" start2="9" end2="9" changelist="702db6f6-97dc-41e4-8766-efeb9f84d188" />
-        <range start1="12" end1="13" start2="10" end2="10" changelist="702db6f6-97dc-41e4-8766-efeb9f84d188" />
-        <range start1="14" end1="14" start2="11" end2="12" changelist="702db6f6-97dc-41e4-8766-efeb9f84d188" />
-        <range start1="16" end1="25" start2="14" end2="14" changelist="00dd6412-131e-4ef9-8972-39a0a8d85a58" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "git-widget-placeholder": "main",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
-}]]></component>
+}</component>
   <component name="TaskManager">
     <servers />
   </component>

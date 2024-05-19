@@ -15,29 +15,43 @@ public class LogData {
     private String objectSize;
     private String OS;
 
-    public static ArrayList logReader() {
-        ArrayList arrayData = new ArrayList<LogData>();
+    public static ArrayList<LogData> logReader() {
+        ArrayList<LogData> arrayData = new ArrayList<LogData>();
+        Pattern pattern = Pattern.compile("^(\\S+) - - \\[(.+)\\] \"(.+?) (.+?) HTTP/1\\.1\" (\\S+) (\\S+) \"(.+?)\" \"(.+?)\"");
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(filePath));
             LogData readLine;
-            do {
+            String line = reader.readLine();
+
+            while (line != null) {
+                line = reader.readLine();
                 readLine = new LogData();
-                String line = reader.readLine();
-                String[] arrayLine = line.split(" (?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)(?![^\\[]*\\])");
-                readLine.IP = arrayLine[0];
-                readLine.type = arrayLine[5];
-                readLine.URL = arrayLine[6];
+                Matcher matcher = pattern.matcher(line);
+
+                if (matcher.find()) {
+
+                    readLine.IP = matcher.group(1);
+                    readLine.date = matcher.group(2);
+                    readLine.type = matcher.group(3);
+                    readLine.URL = matcher.group(4);
+                    readLine.status = matcher.group(5);
+                    readLine.objectSize = matcher.group(6);
+                    readLine.OS = matcher.group(8);
+
+//                    System.out.println(readLine.IP);
+//                    System.out.println(readLine.date);
+//                    System.out.println(readLine.type);
+//                    System.out.println(readLine.URL);
+//                    System.out.println(readLine.status);
+//                    System.out.println(readLine.objectSize);
+//                    System.out.println(readLine.OS);
+
+                    arrayData.add(readLine);
 
 
-//                for (String name : arrayLine) {
-//                    System.out.println(name);
-//                }
-
-                System.out.println(readLine.type);
-                System.out.println(readLine.URL);
-
-            } while (readLine != null);
+                }
+            }
 
             reader.close();
         } catch (IOException e) {

@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        ArrayList data = LogData.logReader();
+        ArrayList<LogData> data = LogData.logReader();
         int option;
 
         System.out.println("1 - Recursos grandes respondidos\n2 - Não respondidos\n3 - % de requisições por SO\n4 - Média das requisições POST\n0 - Sair");
