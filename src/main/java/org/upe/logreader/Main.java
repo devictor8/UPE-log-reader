@@ -11,6 +11,10 @@ public class Main {
         ArrayList<LogData> data = LogData.logReader();
         int option;
 
+        for(LogData os : data) {
+            System.out.println(os.getOS());
+        }
+
         System.out.println("1 - Recursos grandes respondidos\n2 - Não respondidos\n3 - % de requisições por SO\n4 - Média das requisições POST\n0 - Sair");
         option = sc.nextInt();
 
@@ -18,6 +22,7 @@ public class Main {
             case 0:
                 System.out.println("case 0");
         }
+
         sc.close();
     }
 }
