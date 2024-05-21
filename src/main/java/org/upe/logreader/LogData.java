@@ -1,9 +1,15 @@
 package org.upe.logreader;
 
 import java.io.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 
 public class LogData {
     private static final String filePath = "../UPE-log-reader/access.log";
@@ -55,13 +61,18 @@ public class LogData {
     }
 
     public String getDate() {
-        Pattern datePattern = Pattern.compile("(\\d{2})/([A-Za-z]{3})/(\\d{4}):(\\d{2}):(\\d{2}):(\\d{2}) (\\+\\d{4})");
-        Matcher matcherDate = datePattern.matcher(this.date);
-        if (matcherDate.find()) {
-            return matcherDate.group(2) + "/" + matcherDate.group(3);
-        } else {
-            return "padrão não encontrado";
+        try {
+            SimpleDateFormat datePatternOld = new SimpleDateFormat("dd/MMM/yyyy:HH:mm:ss Z");
+            Date formatDate = datePatternOld.parse(this.date);
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(formatDate);
+            SimpleDateFormat newDate = new SimpleDateFormat("MMM/yyyy", Locale.ENGLISH);
+
+            return newDate.format(calendar.getTime());
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
+        return null;
     }
 
     public String getOS() {

@@ -12,7 +12,7 @@ public class Main {
         int option;
 
         for(LogData os : data) {
-            System.out.println(os.getOS());
+            System.out.println(os.getDate());
         }
 
         System.out.println("1 - Recursos grandes respondidos\n2 - Não respondidos\n3 - % de requisições por SO\n4 - Média das requisições POST\n0 - Sair");
