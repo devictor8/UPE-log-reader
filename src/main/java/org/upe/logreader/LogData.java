@@ -21,8 +21,9 @@ public class LogData {
     private String objectSize;
     private String OS;
 
+
     public static ArrayList<LogData> logReader() {
-        ArrayList<LogData> arrayData = new ArrayList<LogData>();
+        ArrayList<LogData> arrayData = new ArrayList<>();
         Pattern pattern = Pattern.compile("^(\\S+) - - \\[(.+)\\] \"(.+?) (.+?) HTTP/1\\.1\" (\\S+) (\\S+) \"(.+?)\" \"(.+?)\"");
 
         try {
@@ -61,18 +62,16 @@ public class LogData {
     }
 
     public String getDate() {
-        try {
-            SimpleDateFormat datePatternOld = new SimpleDateFormat("dd/MMM/yyyy:HH:mm:ss Z");
-            Date formatDate = datePatternOld.parse(this.date);
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTime(formatDate);
-            SimpleDateFormat newDate = new SimpleDateFormat("MMM/yyyy", Locale.ENGLISH);
+        SimpleDateFormat datePatternOld = new SimpleDateFormat("dd/MMM/yyyy:HH:mm:ss Z", Locale.ENGLISH);
+        SimpleDateFormat newDate = new SimpleDateFormat("MMM/yyyy", Locale.ENGLISH);
 
-            return newDate.format(calendar.getTime());
+        try {
+            Date formatDate = datePatternOld.parse(this.date);
+            return newDate.format(formatDate);
         } catch (ParseException e) {
             e.printStackTrace();
+            return "Invalid date format";
         }
-        return null;
     }
 
     public String getOS() {
