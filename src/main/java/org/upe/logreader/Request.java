@@ -5,15 +5,13 @@ import java.util.ArrayList;
 public class Request {
     private static final String recursosGrandesPath = "./Análise/RecursosGrandes.txt";
     private static final String naoRespondidosNovembroPath = "./Análise/RecursosGrandes.txt";
-    private ArrayList<LogData> dataArray;
-    public ArrayList<String> status200;
-    private ArrayList<String> status400;
+    public ArrayList<String> status200 = new ArrayList<>();
+    private ArrayList<String> status400 = new ArrayList<>();
     private ArrayList<String> postRequest;
 
     public void DataAnalysis(ArrayList<LogData> logData) {
-        this.dataArray = logData;
 
-        for (LogData lineData : this.dataArray) {
+        for (LogData lineData : logData) {
             if (validateDataSuccessfulRequest(lineData)) {
                 status200.add(String.format("%s %s %s", lineData.getStatus(), lineData.getObjectSize(), lineData.getIP()));
             };
