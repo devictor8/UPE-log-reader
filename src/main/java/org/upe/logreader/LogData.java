@@ -17,8 +17,8 @@ public class LogData {
     private String date;
     private String type;
     private String URL;
-    private String status;
-    private String objectSize;
+    private int status;
+    private int objectSize;
     private String OS;
 
 
@@ -42,8 +42,8 @@ public class LogData {
                     readLine.date = matcher.group(2);
                     readLine.type = matcher.group(3);
                     readLine.URL = matcher.group(4);
-                    readLine.status = matcher.group(5);
-                    readLine.objectSize = matcher.group(6);
+                    readLine.status = Integer.parseInt(matcher.group(5));
+                    readLine.objectSize = matcher.group(6).equals("-")? 0 : Integer.parseInt(matcher.group(6));
                     readLine.OS = matcher.group(8);
                     arrayData.add(readLine);
                 }
@@ -85,7 +85,7 @@ public class LogData {
         }
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
@@ -97,7 +97,7 @@ public class LogData {
         return URL;
     }
 
-    public String getObjectSize() {
+    public int getObjectSize() {
         return objectSize;
     }
 }
