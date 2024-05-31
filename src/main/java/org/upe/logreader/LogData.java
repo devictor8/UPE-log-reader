@@ -4,12 +4,10 @@ import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 
 public class LogData {
     private static final String filePath = "../UPE-log-reader/access.log";
@@ -20,7 +18,6 @@ public class LogData {
     private int status;
     private int objectSize;
     private String OS;
-
 
     public static ArrayList<LogData> logReader() {
         ArrayList<LogData> arrayData = new ArrayList<>();
@@ -43,7 +40,7 @@ public class LogData {
                     readLine.type = matcher.group(3);
                     readLine.URL = matcher.group(4);
                     readLine.status = Integer.parseInt(matcher.group(5));
-                    readLine.objectSize = matcher.group(6).equals("-")? 0 : Integer.parseInt(matcher.group(6));
+                    readLine.objectSize = matcher.group(6).equals("-") ? 0 : Integer.parseInt(matcher.group(6));
                     readLine.OS = matcher.group(8);
                     arrayData.add(readLine);
                 }
