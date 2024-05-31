@@ -70,7 +70,7 @@ public class LogData {
             return newDate.format(formatDate);
         } catch (ParseException e) {
             e.printStackTrace();
-            return "Invalid date format";
+            return "Formato de data inválido";
         }
     }
 
@@ -81,7 +81,7 @@ public class LogData {
         if(osMatcher.find()) {
             return osMatcher.group(1);
         } else {
-            return "padrão não encontrado";
+            return "Padrão não encontrado";
         }
     }
 
