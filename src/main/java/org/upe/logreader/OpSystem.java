@@ -23,13 +23,12 @@ public class OpSystem {
                     osData2021.put("Others", osData2021.getOrDefault("Others", 0.0) +1 );
                 } else {
                     osData2021.put(os, osData2021.getOrDefault(os, 0.0) + 1);
-                }
+                }    
                 totalRequest++;
             }
-            
         }
         
-        createFile(osData2021);
+        createFile(osData2021, totalRequest);
         System.out.printf("Windows, %f\n", osData2021.getOrDefault("Windows", 0.0));
         System.out.printf("Macintosh, %f\n", osData2021.getOrDefault("Macintosh", 0.0));
         System.out.printf("Ubuntu, %f\n", osData2021.getOrDefault("Ubuntu", 0.0));
@@ -38,18 +37,20 @@ public class OpSystem {
         System.out.printf("Outros, %f\n", osData2021.getOrDefault("Others", 0.0));
     }
 
-    public void createFile(HashMap<String, Double> data) {
+    public void createFile(HashMap<String, Double> data, int totalRequest) {
         try {
             File file = new File(OpSystem.sistemasOperacionaisPath);
             if(!file.getParentFile().exists()) {
                 file.getParentFile().mkdirs();
             }
             BufferedWriter writer = new BufferedWriter(new FileWriter(OpSystem.sistemasOperacionaisPath));
+            writer.write(String.format("Windows %.4f\n", (data.getOrDefault("Windows", 0.0)/totalRequest) * 100));
+            writer.write(String.format("Macintosh %.4f\n", (data.getOrDefault("Macintosh", 0.0)/totalRequest) * 100));
+            writer.write(String.format("Ubuntu %.4f\n", (data.getOrDefault("Ubuntu", 0.0)/totalRequest) * 100));
+            writer.write(String.format("Fedora %.4f\n", (data.getOrDefault("Fedora", 0.0)/totalRequest) * 100));
+            writer.write(String.format("Mobile %.4f\n", (data.getOrDefault("Mobile", 0.0)/totalRequest) * 100));
+            writer.write(String.format("Linux, outros %.4f\n", (data.getOrDefault("Others", 0.0)/totalRequest) * 100));
             
-            for (Map.Entry<String, Double> line : data.entrySet()) {
-                writer.write(line.getKey() + "," + line.getValue());
-                writer.newLine();
-            }
             writer.close();
 
         } catch (IOException e) {

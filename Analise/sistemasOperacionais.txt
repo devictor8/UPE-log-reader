@@ -1,5 +1,0 @@
-Others,105847.0
-Macintosh,16316.0
-Fedora,510.0
-Windows,174464.0
-Mobile,243.0

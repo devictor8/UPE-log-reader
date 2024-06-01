@@ -32,7 +32,7 @@ public class LogData {
                 readLine = new LogData();
 
                 Matcher matcher = pattern.matcher(line);
-
+                
                 if (matcher.find()) {
 
                     readLine.IP = matcher.group(1);
@@ -72,19 +72,16 @@ public class LogData {
     }
 
     public String getOS() {
-        Pattern osPattern = Pattern.compile("\\(.*?(Macintosh|Windows|Linux;/*|X11;Ubuntu|Fedora|Android).*?\\)");
-        Matcher osMatcher = osPattern.matcher(this.OS);
-        
-        if(osMatcher.find()) {
-            String os = osMatcher.group(1);
-            if (os.contains("Linux")) {
-                return os.contains("Android") ? "Mobile" : "Others";
-            }
-            if (os.contains("X11")) {
-                System.out.println(os);
-                return os.contains("Ubuntu") ? "Ubuntu" : "Others";
-            }
-            return os.contains("Android") ? "Mobile" : osMatcher.group(1);
+        if (OS.contains("Android") || OS.contains("Mobile")) {
+            return "Mobile";
+        } else if (OS.contains("Windows")) {
+            return "Windows";
+        } else if(OS.contains("Macintosh")) {
+            return "Macintosh";
+        } else if (OS.contains("Fedora")) {
+            return "Fedora";
+        } else if (OS.contains("Ubuntu")) {
+            return "Ubuntu";
         } else {
             return "Others";
         }
