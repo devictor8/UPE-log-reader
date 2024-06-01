@@ -13,7 +13,7 @@ public class Main {
             int option;
             System.out.println("1 - Recursos grandes respondidos\n2 - Não respondidos\n3 - % de requisições por SO\n4 - Média das requisições POST\n0 - Sair");
             option = sc.nextInt();
-
+            
             switch (option) {
                 case 0:
                     running = false;

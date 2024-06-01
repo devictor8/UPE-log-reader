@@ -72,13 +72,21 @@ public class LogData {
     }
 
     public String getOS() {
-        Pattern osPattern = Pattern.compile("\\(([^)]*)\\)");
+        Pattern osPattern = Pattern.compile("\\(.*?(Macintosh|Windows|Linux;/*|X11;Ubuntu|Fedora|Android).*?\\)");
         Matcher osMatcher = osPattern.matcher(this.OS);
         
         if(osMatcher.find()) {
-            return osMatcher.group(1);
+            String os = osMatcher.group(1);
+            if (os.contains("Linux")) {
+                return os.contains("Android") ? "Mobile" : "Others";
+            }
+            if (os.contains("X11")) {
+                System.out.println(os);
+                return os.contains("Ubuntu") ? "Ubuntu" : "Others";
+            }
+            return os.contains("Android") ? "Mobile" : osMatcher.group(1);
         } else {
-            return "Padrão não encontrado";
+            return "Others";
         }
     }
 
