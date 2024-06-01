@@ -72,9 +72,9 @@ public class LogData {
     }
 
     public String getOS() {
-        Pattern osPattern = Pattern.compile("\\(([^;]*);");
+        Pattern osPattern = Pattern.compile("\\(([^)]*)\\)");
         Matcher osMatcher = osPattern.matcher(this.OS);
-
+        
         if(osMatcher.find()) {
             return osMatcher.group(1);
         } else {

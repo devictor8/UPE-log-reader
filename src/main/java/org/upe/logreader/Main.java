@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Request requestData = new Request();
+        OpSystem osData = new OpSystem();
         boolean running = true;
         while (running) {
             int option;
@@ -24,6 +25,7 @@ public class Main {
                     requestData.dataAnalysisStatus400();
                     break;
                 case 3:
+                    osData.analysisSystemType();
                     break;
                 case 4:
                     requestData.averagePostRequest();

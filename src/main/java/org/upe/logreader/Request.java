@@ -54,10 +54,11 @@ public class Request {
     public void averagePostRequest() {
         ArrayList<LogData> data = LogData.logReader();
         float[] postRequest = new float[]{0, 0};
+        
 
         for (LogData lineData : data) {
-            if (lineData.getType().equals("POST") && lineData.getDate().contains("2021")) {
-                System.out.printf("%s %s\n", lineData.getType(), lineData.getDate());
+            if (lineData.getType().equals("POST") && lineData.getDate().contains("/2021") && lineData.getStatus() >= 200 && lineData.getStatus() <= 299 ) {
+                // System.out.printf("%s %s\n", lineData.getType(), lineData.getDate());
                 postRequest[0]++;
                 postRequest[1] += lineData.getObjectSize();
             };
