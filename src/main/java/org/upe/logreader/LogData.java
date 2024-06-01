@@ -21,7 +21,7 @@ public class LogData {
 
     public static ArrayList<LogData> logReader() {
         ArrayList<LogData> arrayData = new ArrayList<>();
-        Pattern pattern = Pattern.compile("^(\\S+) - - \\[(.+)\\] \"(.+?) (.+?) HTTP/1\\.1\" (\\S+) (\\S+) \"(.+?)\" \"(.+?)\"");
+        Pattern pattern = Pattern.compile("^([^ ]+) - - \\[(.+)\\] \"(.+?) (.+?)(?: HTTP/(.+))?\" (\\d{3}) (\\d+) \"(.*?)\" \"(.*?)\"");
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(filePath));
@@ -39,9 +39,9 @@ public class LogData {
                     readLine.date = matcher.group(2);
                     readLine.type = matcher.group(3);
                     readLine.URL = matcher.group(4);
-                    readLine.status = Integer.parseInt(matcher.group(5));
-                    readLine.objectSize = matcher.group(6).equals("-") ? 0 : Integer.parseInt(matcher.group(6));
-                    readLine.OS = matcher.group(8);
+                    readLine.status = Integer.parseInt(matcher.group(6));
+                    readLine.objectSize = Integer.parseInt(matcher.group(7));
+                    readLine.OS = matcher.group(9);
                     arrayData.add(readLine);
                 }
                 line = reader.readLine();
