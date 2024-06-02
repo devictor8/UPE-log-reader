@@ -14,9 +14,10 @@ public class Request {
         ArrayList<LogData> data = LogData.logReader();
         ArrayList<String> status200 = new ArrayList<>();
 
-        for (LogData lineData : data) {
-            if (lineData.getStatus() >= 200 && lineData.getStatus() <= 299 && lineData.getObjectSize() >= 2000) {
-                status200.add(String.format("%s %s %s\n", lineData.getStatus(), lineData.getObjectSize(), lineData.getIP()));
+        for (LogData dataLine : data) {
+            if (dataLine.getStatus() >= 200 && dataLine.getStatus() <= 299 && dataLine.getObjectSize() >= 2000) {
+                String line = String.format("%s %s %s\n", dataLine.getStatus(), dataLine.getObjectSize(), dataLine.getIP());
+                status200.add(line);
             };
         }
         createFile(Request.recursosGrandesPath, status200);        
@@ -26,9 +27,10 @@ public class Request {
         ArrayList<LogData> data = LogData.logReader();
         ArrayList<String> status400 = new ArrayList<>();
 
-        for(LogData lineData : data) {
-            if (lineData.getDate().equals("Nov/2021") && lineData.getStatus() >= 400 && lineData.getStatus() <= 499) {
-                status400.add(String.format("%s %s %s\n", lineData.getStatus(), lineData.getURL(), lineData.getDate()));
+        for(LogData dataLine : data) {
+            if (dataLine.getDate().equals("Nov/2021") && dataLine.getStatus() >= 400 && dataLine.getStatus() <= 499) {
+                String line = String.format("%s %s %s\n", dataLine.getStatus(), dataLine.getURL(), dataLine.getDate());
+                status400.add(line);
             };
         }
         createFile(Request.naoRespondidosNovembroPath, status400);
@@ -56,16 +58,15 @@ public class Request {
         int total = 0;
         int totalObjectSize = 0;
         
-        for (LogData lineData : data) {
-            if (lineData.getType().equals("POST") && lineData.getDate().contains("/2021") && lineData.getStatus() >= 200 && lineData.getStatus() <= 299 ) {
-                // System.out.printf("%s %s\n", lineData.getType(), lineData.getDate());
+        for (LogData dataLine : data) {
+            if (dataLine.getType().equals("POST") && dataLine.getDate().contains("/2021") && dataLine.getStatus() >= 200 && dataLine.getStatus() <= 299 ) {
                 total++;
-                totalObjectSize += lineData.getObjectSize();
+                totalObjectSize += dataLine.getObjectSize();
             };
         }
         
         double average = total > 0 ? (double) totalObjectSize / total : 0; 
 
-        System.out.printf("%.2f\n", average);
+        System.out.printf("A média de requisições POST em 2021: %.4f\n", average);
     }
 }

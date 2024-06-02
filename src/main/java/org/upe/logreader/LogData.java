@@ -54,9 +54,11 @@ public class LogData {
         return arrayData;
     }
 
+
     public String getIP() {
         return IP;
     }
+
 
     public String getDate() {
         SimpleDateFormat datePatternOld = new SimpleDateFormat("dd/MMM/yyyy:HH:mm:ss Z", Locale.ENGLISH);
@@ -70,6 +72,7 @@ public class LogData {
             return "Formato de data inválido";
         }
     }
+
 
     public String getOS() {
         if (OS.contains("Android") || OS.contains("Mobile")) {
@@ -87,6 +90,7 @@ public class LogData {
         }
     }
 
+    
     public int getStatus() {
         return status;
     }
